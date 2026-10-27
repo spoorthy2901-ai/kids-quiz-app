@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand">🌈 Kids Quiz</div>
+      <p>Learn, play, and earn stars!</p>
+    </header>
+
+    <section class="card" id="start-screen">
+      <div class="hero">🦁 🐼 🐸</div>
+      <h1>Let's Play a Quiz!</h1>
+      <p>Choose an answer and collect stars.</p>
+      <label for="topic">Choose a topic</label>
+      <select id="topic">
+        <option value="all">All topics</option>
+        <option value="numbers">Numbers</option>
+        <option value="animals">Animals</option>
+        <option value="colors">Colors</option>
+        <option value="letters">Letters</option>
+      </select>
+      <button id="start-btn">Start Quiz 🚀</button>
+    </section>
+
+    <section class="card hidden" id="quiz-screen" aria-live="polite">
+      <div class="quiz-top">
+        <span id="progress">Question 1 of 5</span>
+        <span id="score">⭐ 0</span>
+      </div>
+      <div class="progress-track"><div id="progress-fill"></div></div>
+      <div class="question-emoji" id="question-emoji">🐶</div>
+      <h2 id="question-text">Question goes here</h2>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback" role="status"></p>
+      <button id="next-btn" class="hidden">Next Question ➜</button>
+    </section>
+
+    <section class="card hidden" id="result-screen">
+      <div class="result-emoji" id="result-emoji">🏆</div>
+      <h1>Quiz Complete!</h1>
+      <p id="result-message"></p>
+      <div class="final-score" id="final-score"></div>
+      <button id="play-again-btn">Play Again 🔄</button>
+    </section>
+    <footer>Made for little learners 💛</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

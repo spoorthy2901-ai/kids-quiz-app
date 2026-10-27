@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --purple: #7357e8;
+  --pink: #ff77a8;
+  --yellow: #ffd65a;
+  --ink: #332b55;
+  --muted: #77718f;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  color: var(--ink);
+  background: linear-gradient(135deg, #d9f5ff 0%, #fce3f0 52%, #fff1c7 100%);
+  display: grid;
+  place-items: center;
+  padding: 24px 14px;
+}
+.app { width: min(100%, 570px); }
+header { text-align: center; margin-bottom: 18px; }
+.brand { font-size: 2rem; font-weight: 900; letter-spacing: -1px; }
+header p { color: var(--muted); margin: 4px 0; font-weight: 700; }
+.card {
+  background: var(--paper);
+  border: 4px solid rgba(255,255,255,.85);
+  border-radius: 28px;
+  box-shadow: 0 16px 45px rgba(80, 61, 135, .15);
+  padding: clamp(22px, 5vw, 38px);
+  text-align: center;
+}
+.hidden { display: none !important; }
+.hero { font-size: 3rem; letter-spacing: 8px; margin-bottom: 8px; }
+h1 { font-size: clamp(1.65rem, 5vw, 2.15rem); margin: 8px 0; }
+h2 { font-size: clamp(1.25rem, 4vw, 1.65rem); line-height: 1.35; }
+p { line-height: 1.5; }
+#start-screen > p { color: var(--muted); }
+label { display: block; text-align: left; font-weight: 800; margin: 22px 0 8px; }
+select {
+  width: 100%; padding: 13px 14px; border: 2px solid #e5defd;
+  border-radius: 14px; background: #fcfbff; color: var(--ink);
+  font: inherit; font-weight: 700; margin-bottom: 14px;
+}
+button {
+  border: 0; border-radius: 15px; padding: 14px 20px;
+  background: var(--purple); color: white; font: inherit; font-weight: 900;
+  font-size: 1rem; cursor: pointer; box-shadow: 0 5px 0 #5139bd;
+  transition: transform .12s, filter .12s;
+}
+button:hover { filter: brightness(1.06); transform: translateY(-1px); }
+button:active { transform: translateY(3px); box-shadow: 0 2px 0 #5139bd; }
+#start-btn, #play-again-btn, #next-btn { width: 100%; }
+.quiz-top { display: flex; justify-content: space-between; gap: 12px; font-weight: 900; color: var(--muted); }
+#score { color: #b27a00; }
+.progress-track { height: 10px; background: #f0edfb; border-radius: 99px; margin: 15px 0 20px; overflow: hidden; }
+#progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--pink), var(--purple)); border-radius: inherit; transition: width .25s; }
+.question-emoji { font-size: 4rem; margin-top: 10px; }
+.answers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.answer-btn {
+  min-height: 62px; background: #f5f2ff; color: var(--ink);
+  box-shadow: 0 4px 0 #ded6fa; border: 2px solid #e6e0ff;
+}
+.answer-btn:hover { background: #eee8ff; }
+.answer-btn.correct { background: #d9f9e6; border-color: #6bd69a; box-shadow: 0 4px 0 #8adbb0; }
+.answer-btn.wrong { background: #ffe2e7; border-color: #ff9cad; box-shadow: 0 4px 0 #ffc0cb; }
+.answer-btn:disabled { cursor: default; }
+.feedback { min-height: 28px; font-weight: 900; margin: 18px 0 12px; }
+.feedback.good { color: #16834b; }
+.feedback.try { color: #c05a69; }
+#next-btn { margin-top: 4px; }
+.result-emoji { font-size: 4rem; }
+.final-score { font-size: 1.5rem; font-weight: 900; color: var(--purple); margin: 20px 0; }
+footer { text-align: center; color: #655d81; font-size: .9rem; font-weight: 800; padding: 18px 0 4px; }
+@media (max-width: 420px) {
+  .answers { grid-template-columns: 1fr; }
+  .brand { font-size: 1.7rem; }
+}
